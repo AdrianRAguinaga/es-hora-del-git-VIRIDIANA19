@@ -1,0 +1,32 @@
+using System;
+using System.Collections;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Hashtable hashTable = new Hashtable();
+
+        // Agregar elementos a la tabla de hash
+        hashTable.Add("key1", "valor1");
+        hashTable.Add("key2", "valor2");
+        hashTable.Add("key3", "valor3");
+
+        // Obtener un valor de la tabla de hash
+        string valor1 = (string)hashTable["key1"];
+        Console.WriteLine(valor1); // Salida: valor1
+
+        // Verificar si una clave existe en la tabla de hash
+        bool existeKey2 = hashTable.ContainsKey("key2");
+        Console.WriteLine(existeKey2); // Salida: True
+
+        // Eliminar un elemento de la tabla de hash
+        hashTable.Remove("key3");
+
+        // Recorrer todos los elementos de la tabla de hash
+        foreach (DictionaryEntry entry in hashTable)
+        {
+            Console.WriteLine("{0}, {1}", entry.Key, entry.Value);
+        }
+    }
+}
